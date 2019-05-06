@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="DA">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="På kalklandet.dk finder du info om Stevns klint, koldkrigsmuseet og geomuseum Faxe. Få en sjov ferie for hele familien i østsjællands natur. Læring om fossiler, forsteninger og kalklagene. På stevnsfortet kan du lære om den kolde krig og se missiler, tanks og kanoner.">
+    <meta name="keywords" content="Tank, Kold krig, Den kolde krig, Stevns klint, Denmark, Kanon, Geomuseum, Guidet tur, Geologi, Kalkbrud, Lærer, Undervisning, Aktiviteter, Seværdigheder, Skole, Familie aktiviteter, Fort, Missil, Historie, Naturgeografi, Rundvisning, Skolelærer, Tur, Pensionist, Danmarks historie, Unesco, Foredrag, Ferie i danmark, Fossil, Kalk">
+    <title>Begivenheder</title>
+</head>
+
+<style>
+    /*    FONTE*/
+    @font-face {
+        font-family: 'limestoneB';
+        src: url('font/limestone_bold-webfont.woff2') format('woff2'),
+            url('font/limestone_bold-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'limestoneL';
+        src: url('font/limestone_light-webfont.woff2') format('woff2'),
+            url('font/limestone_light-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'limestoneR';
+        src: url('font/limestone_regular-webfont.woff2') format('woff2'),
+            url('font/limestone_regular-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    /*    FONTE SLUT*/
+
+    body {
+        margin: 0;
+    }
+
+    /*    HEADER MED LOGO*/
+    header img {
+        width: 200px;
+    }
+
+    #fixednav {
+        position: sticky;
+        top: 0;
+    }
+
+    .hovedmenu {
+        width: 100%;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .hovedmenu .logo img {
+        padding: 20px 0 20px 20px;
+    }
+
+    .hovedmenu .navmenu {
+        padding: 20px 50px 20px 0;
+        font-family: 'limestoneL';
+        font-size: 1.2rem;
+    }
+
+    .hovedmenu .navmenu a {
+        text-decoration: none;
+        /*        color: darkorange;*/
+        padding-left: 45px;
+    }
+
+    .hovedmenu .navmenu a:link {
+        color: #F37129;
+    }
+
+    .hovedmenu .navmenu a:visited {
+        color: #F37129;
+    }
+
+    .hovedmenu .navmenu a:hover {
+        color: #ffa675;
+    }
+
+    .hovedmenu .navmenu a:active {
+        color: #ffa675;
+    }
+
+    .burgermenu {
+        margin-right: 30px;
+        margin-top: 17px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .bar1,
+    .bar2,
+    .bar3 {
+        width: 55px;
+        height: 6px;
+        background-color: #F37129;
+        margin: 9px 0;
+        transition: 0.4s;
+    }
+
+    .change .bar1 {
+        transform: rotate(-45deg) translate(-13px, 9px);
+    }
+
+    .change .bar2 {
+        opacity: 0;
+    }
+
+    .change .bar3 {
+        transform: rotate(45deg) translate(-10px, -9px);
+    }
+
+    /*    HEADER MED LOGO SLUT*/
+
+    /*    SPLASH BILLEDE*/
+    .splashbillede img {
+        width: 100%;
+    }
+
+    /*    SPLASH BILLEDE SLUT*/
+
+    /*    TEKST VED BILLEDE1*/
+    .greybox {
+        margin-top: 50px;
+    }
+
+    .whitebox {
+        display: grid;
+        grid-template-areas:
+            "welcometxt"
+            "welcomepic";
+        background-color: white;
+        margin-top: 50px;
+    }
+
+    .welcometxt {
+        grid-area: welcometxt;
+        background-color: white;
+    }
+
+    .welcomepic img {
+        width: 90%;
+    }
+
+    .welcomepic {
+        grid-area: welcomepic;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .overskrift {
+        font-family: 'limestoneR';
+        color: #8b6b6b;
+        font-size: 1.9rem;
+    }
+
+    .indhold {
+        font-family: 'limestoneL';
+        line-height: 23px;
+        padding-top: 5px;
+        color: #8b6b6b;
+        font-size: 0.95rem;
+    }
+
+    .indhold h4 {
+        font-family: 'limestoneR';
+        font-size: 1rem;
+    }
+
+    .indhold p a,
+    .indhold h4 a {
+        text-decoration: none;
+        color: #F37129;
+        font-family: 'limestoneR';
+    }
+
+    /*    TEKST VED BILLEDE1 SLUT*/
+
+    /*    TEKST VED BILLEDE2*/
+
+
+
+    /*    TEKST VED BILLEDE2 SLUT*/
+
+    /*    GENERELT*/
+    .overskrift,
+    .indhold {
+        margin: 20px;
+    }
+
+    /*GENERELT SLUT*/
+
+    /*    FOOTER*/
+    footer {
+        width: 100%;
+        background-color: darkgrey;
+        font-family: 'limestoneR';
+        color: #575757;
+        font-size: 0.95rem;
+    }
+
+    .fodnote {
+        padding: 20px;
+    }
+
+    /*FOOTER SLUT*/
+
+    /*    MEDIA QUERIES*/
+    @media (max-width: 1014px) {
+        .hidden {
+            display: none;
+        }
+
+        .hovedmenu {
+            position: relative;
+        }
+
+        .burgermenu {
+            position: absolute;
+            right: 2%;
+        }
+
+        .hovedmenu .navmenu {
+            background-color: rgba(255, 255, 255, 0.9);
+            top: 100%;
+            position: absolute;
+            right: 0;
+            font-size: 1.5rem;
+            padding-top: 0;
+            text-align: center;
+        }
+
+        .hovedmenu .navmenu a {
+            line-height: 55px;
+        }
+
+    }
+
+    @media (min-width: 1015px) {
+        .burgermenu {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+        }
+
+        .whitebox {
+            grid-template-areas:
+                "welcometxt welcomepic welcomepic";
+            margin: 20px 100px 0;
+        }
+
+        .indhold {
+            width: 79%;
+        }
+
+        .welcomepic {
+            padding: 30px 0;
+        }
+
+        .welcomepic img {
+            width: 100%;
+        }
+
+        .fodnote {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+
+    }
+
+    /*    MEDIA QUERIES SLUT*/
+
+</style>
+
+<body>
+    <div id="fixednav">
+        <header class="hovedmenu">
+            <div class="logo">
+                <a href="index.html"><img src="billeder/logo.png"></a>
+            </div>
+            <div class="burgermenu">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <div class="navmenu hidden">
+                <nav>
+                    <ul>
+                        <li><a href="attraktion.html?slug=koldkrigsmuseum">FORSIDEN</a></li>
+                        <li><a href="GuidetTur.html">GUIDET TUR</a></li>
+                        <li><a href="Praktisk.html">PRAKTISK INFO</a></li>
+                        <li><a href="OmOs.html">OM MUSEET</a></li>
+                        <li><a href="Begivenheder.html">BEGIVENHEDER</a></li>
+                        <div class="hidden">
+                            <li><a href="index.html" style="font-family: 'limestoneB'">DA</a></li>
+                        </div>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+    <splash>
+        <div class="splashbillede">
+            <picture>
+                <source media="(min-width: 630px)" srcset="billeder/splashbegiv.png">
+                <img src="billeder/splashbegivmobile.png" alt="default">
+            </picture>
+        </div>
+    </splash>
+
+    <section class="attraktion">
+        <!--        <a href="#"><img src="" alt=""></a>-->
+        <div class="greycontainer">
+            <div class="greybox">
+                <div class="whitebox">
+                    <div class="welcometxt">
+                        <h1 class="overskrift"></h1>
+                        <p class="indhold"></p>
+                    </div>
+                    <div class="welcomepic">
+                        <picture>
+                            <source media="(min-width: 630px)" srcset="billeder/kalender.png">
+                            <img src="billeder/kalendermobile.png" alt="guidetturpic">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+            <!--
+            <div class="greybox2">
+                <div class="whitebox2">
+                    <div class="praktiskpic">
+                        <img src="billeder/praktiskpic.png" alt="praktiskpic">
+                    </div>
+                    <div class="forholdtxt">
+                        <h4 class="forholdo1"></h4>
+                        <p class="forholdb1"></p>
+                        <h4 class="forholdo2"></h4>
+                        <p class="forholdb2"></p>
+                        <h4 class="forholdo3"></h4>
+                        <p class="forholdb3"></p>
+                    </div>
+                </div>
+            </div>
+-->
+        </div>
+    </section>
+
+
+    <h4 class="kontaktvelkommen"></h4>
+    <p class="nummervelkommen"></p>
+
+
+
+
+    <footer>
+        <div class="fodnote">
+            <p class="adresse">Adresse: Korsnæbsvej 60, 4673 Rødvig Stevns</p>
+            <p class="nummer">Tlf: +45 56 50 28 06</p>
+            <p class="SoMe">Find os på Facebook og Instagram</p>
+        </div>
+    </footer>
+</body>
+<script>
+    let indhold;
+    document.addEventListener("DOMContentLoaded", start);
+
+    function start() {
+        async function getJson() {
+            let url = "http://www.phin.dk/kea2/kalklandet/wordpress/wp-json/wp/v2/pages/39"
+            let jsonData = await fetch(url);
+            indhold = await jsonData.json();
+            visIndhold();
+        }
+
+        function visIndhold() {
+            document.querySelector(".overskrift").textContent = indhold.title.rendered;
+            document.querySelector(".indhold").innerHTML = indhold.content.rendered;
+        }
+
+        getJson();
+
+        document.querySelector(".burgermenu").addEventListener("click", toggleMenu)
+    }
+
+    function toggleMenu() {
+        let erSkjult =
+
+            document.querySelector(".navmenu").classList.toggle("hidden");
+        document.querySelector(".burgermenu").classList.toggle("change");
+
+
+    }
+
+</script>
+
+</html>

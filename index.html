@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="DA">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="På kalklandet.dk finder du info om Stevns klint, koldkrigsmuseet og geomuseum Faxe. Få en sjov ferie for hele familien i østsjællands natur. Læring om fossiler, forsteninger og kalklagene. På stevnsfortet kan du lære om den kolde krig og se missiler, tanks og kanoner.">
+    <meta name="keywords" content="Tank, Kold krig, Den kolde krig, Stevns klint, Denmark, Kanon, Geomuseum, Guidet tur, Geologi, Kalkbrud, Lærer, Undervisning, Aktiviteter, Seværdigheder, Skole, Familie aktiviteter, Fort, Missil, Historie, Naturgeografi, Rundvisning, Skolelærer, Tur, Pensionist, Danmarks historie, Unesco, Foredrag, Ferie i danmark, Fossil, Kalk">
+    <title></title>
+</head>
+
+<style>
+    /*    FONTE*/
+    @font-face {
+        font-family: 'limestoneB';
+        src: url('font/limestone_bold-webfont.woff2') format('woff2'),
+            url('font/limestone_bold-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'limestoneL';
+        src: url('font/limestone_light-webfont.woff2') format('woff2'),
+            url('font/limestone_light-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'limestoneR';
+        src: url('font/limestone_regular-webfont.woff2') format('woff2'),
+            url('font/limestone_regular-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    /*    FONTE SLUT*/
+
+    body {
+        margin: 0;
+    }
+
+    /*    HEADER MED LOGO*/
+    header img {
+        width: 200px;
+    }
+
+    #fixednav {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
+
+    .hovedmenu {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
+
+    .hovedmenu .logo img {
+        padding: 20px 0 20px 20px;
+    }
+
+    /*    HEADER MED LOGO SLUT*/
+
+    /*    SPLASH BILLEDE*/
+    .splashbillede img {
+        width: 100%;
+    }
+
+    /*    SPLASH BILLEDE SLUT*/
+
+    /*    TEKST FØR BILLEDER*/
+    .overskrift {
+        font-family: 'limestoneR';
+        padding-top: 5px;
+        color: #8b6b6b;
+    }
+
+    .indhold {
+        font-family: 'limestoneL';
+        line-height: 26px;
+        padding-top: 4px;
+        color: #8b6b6b;
+        font-size: 0.95rem;
+    }
+
+    .indhold p strong {
+        font-family: 'limestoneR';
+    }
+
+    .overskrift,
+    .indhold {
+        margin: 20px;
+    }
+
+    /*    TEKST FØR BILLEDER SLUT*/
+
+    /*    BILLEDER*/
+    .greybox {
+        display: grid;
+        grid-template-areas:
+            "welcometxt"
+            "attraktioner";
+        background-color: white;
+        margin-top: 50px;
+    }
+
+    .welcometxt {
+        grid-area: welcometxt;
+        background-color: white;
+        margin: 20px;
+    }
+
+    .attraktioner {
+        grid-area: attraktioner;
+        text-align: center;
+        padding: 20px 30px;
+    }
+
+    .attraktioner img {
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
+    /*    BILLEDER SLUT*/
+
+    /*    TEKST EFTER BILLEDER*/
+    .kontaktvelkommen,
+    .nummervelkommen,
+    .nummermail {
+        margin: 30px 10px;
+        font-family: 'limestoneL';
+        color: #575757;
+    }
+
+    h4.kontaktvelkommen {
+        font-family: 'limestoneR';
+        font-size: 1.2rem;
+    }
+
+    .greybox2 {
+        background-color: darkgrey;
+        padding: 20px;
+    }
+
+    .whitebox {
+        display: grid;
+        grid-template-areas:
+            "kontakttxt"
+            "kontaktpic";
+        background-color: darkgrey;
+    }
+
+    .greybox2txt {
+        grid-area: kontakttxt;
+    }
+
+    .greybox2pic {
+        grid-area: kontaktpic;
+    }
+
+    /*    TEKST EFTER BILLEDER*/
+
+    /*    MEDIA QUERIES*/
+    @media (min-width: 1015px) {
+        .greybox {
+            grid-template-areas:
+                "welcometxt"
+                "attraktioner";
+            margin: 20px 150px 0;
+        }
+
+        .whitebox {
+            grid-template-areas:
+                "kontakttxt kontaktpic"
+        }
+
+        .welcometxt {
+            margin: 20px;
+        }
+
+        .attraktioner {
+            padding: 20px;
+        }
+
+        .attraktioner img {
+            width: 28%;
+            padding: 0 23px 50px;
+        }
+
+        .attraktioner img:hover {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        .indhold {
+            width: 95%;
+            margin-left: 30px;
+        }
+
+        .overskrift {
+            margin-left: 30px;
+        }
+
+        .kontaktvelkommen,
+        .nummervelkommen,
+        .nummermail {
+            margin-left: 170px;
+        }
+
+    }
+
+    /*    MEDIA QUERIES SLUT*/
+</style>
+
+<body>
+    <div id="fixednav">
+        <header class="hovedmenu">
+            <div class="logo">
+                <a href="index.html"><img src="billeder/logo.png"></a>
+            </div>
+            <!--
+<h1 class="sitenavn"></h1>
+<p></p>
+-->
+            <!--
+<nav>
+    <a href="index.html">Forsiden</a>
+    <a href="ForsideKoldekrig.html">Koldkrigsmuseum</a>
+    <a href="Begivenheder.html">Begivenheder</a>
+    <a href="GuidetTur.html">Guidet tur</a>
+    <a href="OmOs.html">Om os</a>
+    <a href="Praktisk.html">Praktisk</a>
+</nav>
+-->
+        </header>
+    </div>
+
+    <splash>
+        <div class="splashbillede">
+            <picture>
+                <source media="(min-width: 630px)" srcset="billeder/splashforside.png">
+                <img src="billeder/splashforsidemobile.png" alt="default">
+            </picture>
+        </div>
+    </splash>
+
+    <div class="greybox">
+        <div class="welcometxt">
+            <h1 class="overskrift"></h1>
+            <main class="indhold"></main>
+        </div>
+        <div class="attraktioner"></div>
+    </div>
+    <div class="greybox2">
+        <div class="whitebox">
+            <div class="greybox2txt">
+                <h4 class="kontaktvelkommen"></h4>
+                <p class="nummervelkommen"></p>
+                <p class="nummermail"></p>
+            </div>
+            <div class="greybox2pic">
+                <div class="fb"></div>
+                <div class="insta"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <template>
+
+        <!--        <section class="attraktion">-->
+        <a href="#"><img src="" alt=""></a>
+
+        <!--        </section>-->
+    </template>
+
+    <footer>
+        <p class="adresse"></p>
+        <p class="nummer"></p>
+        <p class="SoMe"></p>
+    </footer>
+
+</body>
+
+<script>
+    let indhold = {};
+    let attraktioner = [];
+    document.addEventListener("DOMContentLoaded", start);
+
+    function start() {
+        getJson();
+        hentJson();
+    }
+    async function getJson() {
+        let url = "http://www.phin.dk/kea2/kalklandet/wordpress/wp-json/wp/v2/pages/7"
+        let jsonData = await fetch(url);
+        indhold = await jsonData.json();
+        visIndhold();
+    }
+
+    function visIndhold() {
+        document.querySelector(".overskrift").textContent = indhold.title.rendered;
+        document.querySelector(".indhold").innerHTML = indhold.content.rendered;
+        document.querySelector(".kontaktvelkommen").innerHTML = indhold.kontaktvelkommen;
+        document.querySelector(".nummervelkommen").innerHTML = indhold.nummervelkommen;
+        document.querySelector(".nummermail").innerHTML = indhold.praktisk;
+    }
+
+    async function hentJson() {
+        let url = "http://www.phin.dk/kea2/kalklandet/wordpress/wp-json/wp/v2/attraktion?per_page=3"
+        let jsonData = await fetch(url);
+        attraktioner = await jsonData.json();
+        visAttraktioner();
+    }
+
+    function visAttraktioner() {
+        let dest = document.querySelector(".attraktioner");
+        let temp = document.querySelector("template");
+        attraktioner.forEach(attraktion => {
+            let klon = temp.cloneNode(true).content;
+            klon.querySelector("img").src = attraktion.billede.guid;
+            klon.querySelector("a").href = "attraktion.html?slug=" + attraktion.slug;
+            dest.appendChild(klon);
+        });
+    }
+
+
+
+    getJson();
+</script>
+
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="DA">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<style>
+    /*    FONTE*/
+    @font-face {
+        font-family: 'limestoneB';
+        src: url('font/limestone_bold-webfont.woff2') format('woff2'),
+            url('font/limestone_bold-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'limestoneL';
+        src: url('font/limestone_light-webfont.woff2') format('woff2'),
+            url('font/limestone_light-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'limestoneR';
+        src: url('font/limestone_regular-webfont.woff2') format('woff2'),
+            url('font/limestone_regular-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    /*    FONTE SLUT*/
+
+    body {
+        margin: 0;
+    }
+
+    /*    HEADER MED LOGO*/
+    header img {
+        width: 200px;
+    }
+
+    #fixednav {
+        position: sticky;
+        top: 0;
+    }
+
+    .hovedmenu {
+        width: 100%;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .hovedmenu .logo img {
+        padding: 20px 0 20px 20px;
+    }
+
+    .hovedmenu .navmenu {
+        padding: 20px 50px 20px 0;
+        font-family: 'limestoneL';
+        font-size: 1.2rem;
+    }
+
+    .hovedmenu .navmenu a {
+        text-decoration: none;
+        /*        color: darkorange;*/
+        padding-left: 45px;
+    }
+
+    .hovedmenu .navmenu a:link {
+        color: darkorange;
+    }
+
+    .hovedmenu .navmenu a:visited {
+        color: darkorange;
+    }
+
+    .hovedmenu .navmenu a:hover {
+        color: white;
+    }
+
+    .hovedmenu .navmenu a:active {
+        color: white;
+    }
+
+    .burgermenu {
+        margin-right: 30px;
+        margin-top: 17px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .bar1,
+    .bar2,
+    .bar3 {
+        width: 55px;
+        height: 6px;
+        background-color: darkorange;
+        margin: 9px 0;
+        transition: 0.4s;
+    }
+
+    .change .bar1 {
+        transform: rotate(-45deg) translate(-13px, 9px);
+    }
+
+    .change .bar2 {
+        opacity: 0;
+    }
+
+    .change .bar3 {
+        transform: rotate(45deg) translate(-10px, -9px);
+    }
+
+    /*    HEADER MED LOGO SLUT*/
+
+    /*    SPLASH BILLEDE*/
+    .splashbillede img {
+        width: 100%;
+    }
+
+    /*    SPLASH BILLEDE SLUT*/
+
+    /*    TEKST VED BILLEDE1*/
+    .greybox {
+        margin-top: 50px;
+    }
+
+    .greybox .tilbage {
+        font-family: 'limestoneR';
+        color: darkorange;
+        margin: 20px;
+    }
+
+    .greybox .tilbagetxt a {
+        text-decoration: none;
+    }
+
+    .whitebox {
+        display: grid;
+        grid-template-areas:
+            "welcometxt"
+            "guider";
+        background-color: white;
+        margin-top: 50px;
+    }
+
+    .welcometxt {
+        grid-area: welcometxt;
+        background-color: white;
+    }
+
+    .guider {
+        grid-area: guider;
+        width: 100%;
+    }
+
+    .overskrift {
+        font-family: 'limestoneR';
+        color: #8b6b6b;
+        font-size: 1.9rem;
+    }
+
+    .indhold {
+        font-family: 'limestoneL';
+        line-height: 23px;
+        padding-top: 5px;
+        color: #8b6b6b;
+        font-size: 0.9rem;
+    }
+
+    .indhold h4 {
+        font-family: 'limestoneR';
+        font-size: 0.9rem;
+    }
+
+    .guider h4 {
+        font-family: 'limestoneB';
+        color: #8b6b6b;
+    }
+
+    .guider p {
+        font-family: 'limestoneL';
+        color: #8b6b6b;
+    }
+
+    .guider img {
+        width: 100%;
+    }
+
+    .indhold p a,
+    .indhold h4 a {
+        text-decoration: none;
+        color: darkorange;
+        font-family: 'limestoneR';
+    }
+
+    /*    TEKST VED BILLEDE1 SLUT*/
+
+    /*    TEKST VED BILLEDE2*/
+
+
+
+    /*    TEKST VED BILLEDE2 SLUT*/
+
+    /*    GENERELT*/
+    .overskrift,
+    .indhold,
+    .guider h4 {
+        margin: 20px;
+    }
+
+    .guider p {
+        margin: 10px;
+    }
+
+    /*GENERELT SLUT*/
+
+    /*    FOOTER*/
+    footer {
+        width: 100%;
+        height: 10vh;
+        background-color: darkgrey;
+    }
+
+    /*FOOTER SLUT*/
+
+    /*    MEDIA QUERIES*/
+    @media (max-width: 1014px) {
+        .hidden {
+            display: none;
+        }
+
+        .hovedmenu {
+            position: relative;
+        }
+
+        .burgermenu {
+            position: absolute;
+            right: 2%;
+        }
+
+        .hovedmenu .navmenu {
+            background-color: rgba(255, 255, 255, 0.9);
+            top: 100%;
+            position: absolute;
+            right: 0;
+            font-size: 1.5rem;
+            padding-top: 0;
+            text-align: center;
+        }
+
+        .hovedmenu .navmenu a {
+            line-height: 55px;
+        }
+
+    }
+
+    @media (min-width: 1015px) {
+        .burgermenu {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+        }
+
+        .whitebox {
+            grid-template-areas:
+                "welcometxt"
+                "guider";
+            margin: 20px 100px 0;
+        }
+
+        .greybox .tilbage {
+            margin: 10px 100px 0;
+        }
+
+        .indhold {
+            width: 59%;
+        }
+
+        .guider img {
+            width: 20%;
+        }
+
+        .guider h4,
+        .guider p {
+            margin: 20px 0;
+            width: 50%;
+        }
+
+        p.indhold,
+        h1.overskrift {
+            margin: 20px 0;
+        }
+
+    }
+
+    /*    MEDIA QUERIES SLUT*/
+
+</style>
+
+<body>
+    <div id="fixednav">
+        <header class="hovedmenu">
+            <div class="logo">
+                <a href="index.html"><img src="billeder/logo.png"></a>
+            </div>
+            <div class="burgermenu">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <div class="navmenu hidden">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">FORSIDEN</a></li>
+                        <li><a href="GuidetTur.html">GUIDET TUR</a></li>
+                        <li><a href="Begivenheder.html">BEGIVENHEDER</a></li>
+                        <li><a href="OmOs.html">OM OS</a></li>
+                        <li><a href="Praktisk.html">PRAKTISK INFO</a></li>
+                        <div class="hidden">
+                            <li><a href="index.html" style="font-family: 'limestoneB'">DA</a></li>
+                        </div>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+    <splash>
+        <div class="splashbillede">
+            <img src="billeder/splashmoedguider.png" alt="splash">
+        </div>
+    </splash>
+
+    <section class="attraktion">
+        <!--        <a href="#"><img src="" alt=""></a>-->
+        <div class="greycontainer">
+            <div class="greybox">
+                <div class="tilbagetxt">
+                    <a href="GuidetTur.html">
+                        <p class="tilbage">← Klik her for at komme tilbage</p>
+                    </a>
+                </div>
+                <div class="whitebox">
+                    <div class="welcometxt">
+                        <h1 class="overskrift"></h1>
+                        <p class="indhold"></p>
+                    </div>
+                    <div class="guidecontainer">
+                        <div class="guider"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <h4 class="kontaktvelkommen"></h4>
+    <p class="nummervelkommen"></p>
+
+    <template>
+        <img src="" alt="">
+        <h4></h4>
+        <p></p>
+    </template>
+
+
+    <footer>
+        <p class="adresse"></p>
+        <p class="nummer"></p>
+        <p class="SoMe"></p>
+    </footer>
+</body>
+<script>
+    let indhold = {};
+    let guider = [];
+    document.addEventListener("DOMContentLoaded", start);
+
+    function start() {
+        getJson();
+        hentJson();
+    }
+
+    async function getJson() {
+        let url = "http://www.phin.dk/kea2/kalklandet/wordpress/wp-json/wp/v2/pages/23"
+        let jsonData = await fetch(url);
+        indhold = await jsonData.json();
+        visIndhold();
+    }
+
+    function visIndhold() {
+        document.querySelector(".overskrift").textContent = indhold.title.rendered;
+        document.querySelector(".indhold").innerHTML = indhold.content.rendered;
+    }
+
+    async function hentJson() {
+        let url = "http://www.phin.dk/kea2/kalklandet/wordpress/wp-json/wp/v2/guide?per_page=3"
+        let jsonData = await fetch(url);
+        guider = await jsonData.json();
+        visGuider();
+    }
+
+    function visGuider() {
+        let dest = document.querySelector(".guider");
+        let temp = document.querySelector("template");
+        guider.forEach(guide => {
+            let klon = temp.cloneNode(true).content;
+            klon.querySelector("img").src = guide.billede.guid;
+            klon.querySelector("h4").innerHTML = guide.title.rendered;
+            klon.querySelector("p").innerHTML = guide.content.rendered;
+            dest.appendChild(klon);
+        });
+    }
+
+    getJson();
+
+</script>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="DA">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Begivenheder</title>
+</head>
+
+<body>
+    <header class="hovedmenu">
+        <nav>
+            <a href="ForsideKoldekrig.html">Koldkrigsmuseum</a>
+            <a href="Begivenheder.html">Begivenheder</a>
+            <a href="GuidetTur.html">Guidet tur</a>
+            <a href="OmOs.html">Om os</a>
+        </nav>
+        <a href="index.html">Forsiden</a>
+    </header>
+
+
+
+    <div class="area-wrapper">
+
+        <main>
+            <h1 class="overskrift">
+
+            </h1>
+            <section class="indhold">
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+    <!--------->
+    <template>
+        <article class="ret">
+            <h2></h2>
+            <div></div>
+            <img src="" alt="">
+        </article>
+    </template>
+
+    <script>
+        let indhold = {};
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            hentJson1();
+        }
+
+        async function hentJson1() {
+            let url = "http://www.phin.dk/kea2/kalklandet/wordpress/?page_id=7";
+            let jsonData = await fetch(url);
+            indhold = await jsonData.json();
+            console.log(indhold);
+            visIndhold();
+        }
+
+        function visIndhold() {
+            document.querySelector(".overskrift").textContent = indhold.title.rendered;
+            document.querySelector(".indhold").innerHTML = indhold.content.rendered;
+        }
+
+    </script>
+</body>
+
+</html>
+<link rel="stylesheet" href="stylesheet.css">
